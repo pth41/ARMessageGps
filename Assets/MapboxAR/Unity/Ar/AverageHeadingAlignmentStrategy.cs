@@ -63,6 +63,8 @@ namespace Mapbox.Unity.Ar
 
 				// Add our averaged rotation.
 				_targetPosition = Quaternion.Euler(0, _averageRotation, 0) * _targetPosition;
+
+				MessageProvider.Instance.GotAlignment ();
 			}
 			else
 			{

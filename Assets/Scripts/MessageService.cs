@@ -27,30 +27,55 @@
 		}
 
 		public void LoadMessages() {
-			
+			StartCoroutine (LoadMessagesRoutine());
+		}
+
+		IEnumerator LoadMessagesRoutine(){
+			WWW www = new WWW("https://angelical-yields.000webhostapp.com/loadphp.php");
+			yield return www;
+
+			if (www.error == null) {
+				Debug.Log ("Message load To Server...");
+			} else {
+				Debug.Log ("Error Loading Message Data...");
+			}
+
 			List<GameObject> messageObjectList = new List<GameObject> ();
 
-			for(int i = 0; i < TestServer.Instance.text.Count; i++) {
+			LitJson.JsonData getData = LitJson.JsonMapper.ToObject(www.text);
+
+			for(int i = 0; i < getData["Msginfo"].Count; i++) {
 				// 메시지ar오브젝트 인스턴스화 및 데이터 로드
 				GameObject MessageBubble = Instantiate (messagePrefabAR,mapRootTransform);
 				Message message = MessageBubble.GetComponent<Message>();
 
-				message.latitude = TestServer.Instance.latitude[i];
-				message.longitude = TestServer.Instance.longitude[i];
-				message.text = TestServer.Instance.text[i];
+				message.latitude = double.Parse(getData["Msginfo"][i]["lat"].ToString());
+				message.longitude = double.Parse(getData["Msginfo"][i]["lon"].ToString());
+				message.text = getData["Msginfo"][i]["text"].ToString();
 				messageObjectList.Add(MessageBubble);
 			}
-			// 객체 목록을 배치할 수 있도록 MessageProvider 에게 전달
+			// 객체 목록을 배치할 수 있도록 ARMessageProvider 에게 전달
 			MessageProvider.Instance.LoadARMessages (messageObjectList);
-
 		}
-			
+
 		public void SaveMessage(double lat, double lon, string text){
-			TestServer.Instance.latitude.Add (lat);
-			TestServer.Instance.longitude.Add (lon);
-			TestServer.Instance.text.Add (text);
-
+			StartCoroutine (SaveMessageRoutine (lat, lon, text));
 		}
-			
+
+		IEnumerator SaveMessageRoutine(double lat, double lon, string text){
+			WWWForm form = new WWWForm();
+			form.AddField("lat", lat.ToString());
+			form.AddField("lon", lon.ToString());
+			form.AddField("text", text);
+
+			WWW www = new WWW("https://angelical-yields.000webhostapp.com/savephp.php", form);
+			yield return www;
+
+			if (www.error == null) {
+				Debug.Log ("Message Saved To Server...");
+			} else {
+				Debug.Log ("Error Saving Message Data...");
+			}
+		}
 	}
 }

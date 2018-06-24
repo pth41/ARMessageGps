@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HideMap : MonoBehaviour {
+	/// <summary>
+	/// 맵박스에 의해 카메라에 오버레이되는 맵을 숨깁니다.
+	/// </summary>
 
-	// Use this for initialization
 	void Start () {
 		HideMapCoroutine = StartCoroutine (HideMapRoutine ());
 	}

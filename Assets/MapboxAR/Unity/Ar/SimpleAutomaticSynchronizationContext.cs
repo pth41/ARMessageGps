@@ -164,6 +164,8 @@
 			alignment.Position = _position;
 
 			OnAlignmentAvailable(alignment);
+
+			MessageProvider.Instance.GotAlignment ();
 		}
 	}
 }

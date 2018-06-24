@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/ARpj.unity
     guid: 0990aae9c8e19424395a1ebfb16b4f0b
+  - enabled: 1
+    path: Assets/worldscaleAR.unity
+    guid: b773a0896a1a7a74282277e797e86ade

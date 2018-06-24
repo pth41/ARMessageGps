@@ -29,10 +29,10 @@
 			_instance = this;
 		}
 
-		void Update(){
+		public void GotAlignment(){
 				if (!gotInitialAlignment) {
 					gotInitialAlignment = true;
-					// 인증되면 UI활성화 설정
+					// 정렬되면 UI활성화 설정
 					UIBehavior.Instance.ShowHomeUI ();
 					// 첫번째 메시지 로드
 					MessageService.Instance.LoadMessages ();
@@ -87,7 +87,7 @@
 					Message message = messageObject.GetComponent<Message> ();
 
 					Vector3 _targetPosition = _map.Root.TransformPoint(Conversions.GeoToWorldPosition(message.latitude,message.longitude, _map.CenterMercator, _map.WorldRelativeScale).ToVector3xz()); 
-
+					//_map.Root.TransformPoint(Conversions.~
 					messageObject.transform.position = _targetPosition;
 				}
 			}

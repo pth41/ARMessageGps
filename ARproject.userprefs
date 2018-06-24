@@ -1,0 +1,23 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MessageService.cs">
+    <Files>
+      <File FileName="Assets\Scripts\MessageService.cs" Line="36" Column="4" />
+      <File FileName="Assets\Scripts\MessageProvider.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Message.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UIBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HideMap.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\for Test\TestServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\for Test\MessageProviderT.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\for Test\MessageServiceT.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\for Test\UIBehaviorT.cs" Line="1" Column="1" />
+      <File FileName="Assets\MapboxAR\Unity\Ar\LerpAlignmentStrategy.cs" Line="1" Column="1" />
+      <File FileName="Assets\MapboxAR\Unity\Ar\SimpleAutomaticSynchronizationContext.cs" Line="1" Column="1" />
+      <File FileName="Assets\MapboxAR\Unity\Ar\AverageHeadingAlignmentStrategy.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -2792,17 +2792,18 @@ MonoBehaviour:
 --- !u!114 &1264497415
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114892264240900376, guid: 35e76f6e52f5c4252a0b703cc2019a37,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264497412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d2f95bcf49014079b9d10228e3006a8, type: 3}
+  m_Script: {fileID: 11500000, guid: b000a4c373a2e470986a96ce9dba73ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 1264497417}
-  _followFactor: 1
+  _maxSamples: 10
+  _ignoreAngleThreshold: 10
+  _lerpSpeed: 2
 --- !u!114 &1264497416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2821,7 +2822,7 @@ MonoBehaviour:
   _alignmentStrategy: {fileID: 1264497415}
   _synchronizationBias: 1
   _arTrustRange: 30
-  _minimumDeltaDistance: 3
+  _minimumDeltaDistance: 1
   _minimumDesiredAccuracy: 45
 --- !u!4 &1264497417
 Transform:

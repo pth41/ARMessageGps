@@ -16,6 +16,8 @@ namespace Mapbox.Unity.Ar
 			_targetPosition = alignment.Position;
 			_targetRotation = Quaternion.Euler(0, alignment.Rotation, 0);
 			_isAlignmentAvailable = true;
+
+			MessageProvider.Instance.GotAlignment ();
 		}
 
 		// FIXME: this should be in a coroutine, which is activated in Align.
